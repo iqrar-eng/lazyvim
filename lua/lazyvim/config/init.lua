@@ -16,16 +16,9 @@ local defaults = {
   -- load the default settings
   defaults = {
     autocmds = true, -- lazyvim.config.autocmds
-    keymaps = true, -- lazyvim.config.keymaps
+    keymaps = true,  -- lazyvim.config.keymaps
     -- lazyvim.config.options can't be configured here since that's loaded before lazyvim setup
     -- if you want to disable loading options, add `package.loaded["lazyvim.config.options"] = true` to the top of your init.lua
-  },
-  news = {
-    -- When enabled, NEWS.md will be shown when changed.
-    -- This only contains big new features and breaking changes.
-    lazyvim = true,
-    -- Same but for Neovim's news.txt
-    neovim = false,
   },
   -- icons used by other plugins
   -- stylua: ignore
@@ -142,7 +135,6 @@ M.json = {
   data = {
     version = nil, ---@type number?
     install_version = nil, ---@type number?
-    news = {}, ---@type table<string, string>
     extras = {}, ---@type string[]
   },
 }
@@ -193,7 +185,6 @@ function M.setup(opts)
       end
 
       LazyVim.format.setup()
-      LazyVim.news.setup()
       LazyVim.root.setup()
 
       vim.api.nvim_create_user_command("LazyExtras", function()
@@ -356,16 +347,16 @@ function M.get_defaults()
   ---@type table<string, LazyVimDefault[]>
   local checks = {
     picker = {
-      { name = "snacks", extra = "editor.snacks_picker" },
-      { name = "fzf", extra = "editor.fzf" },
+      { name = "snacks",    extra = "editor.snacks_picker" },
+      { name = "fzf",       extra = "editor.fzf" },
       { name = "telescope", extra = "editor.telescope" },
     },
     cmp = {
       { name = "blink.cmp", extra = "coding.blink" },
-      { name = "nvim-cmp", extra = "coding.nvim-cmp" },
+      { name = "nvim-cmp",  extra = "coding.nvim-cmp" },
     },
     explorer = {
-      { name = "snacks", extra = "editor.snacks_explorer" },
+      { name = "snacks",   extra = "editor.snacks_explorer" },
       { name = "neo-tree", extra = "editor.neo-tree" },
     },
   }

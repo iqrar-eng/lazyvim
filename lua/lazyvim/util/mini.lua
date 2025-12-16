@@ -45,7 +45,7 @@ function M.ai_whichkey(opts)
     { "i", desc = "indent" },
     { "o", desc = "block, conditional, loop" },
     { "q", desc = "quote `\"'" },
-    { "t", desc = "tag" },
+    { "k", desc = "tag" },
     { "u", desc = "use/call" },
     { "{", desc = "{} block" },
     { "}", desc = "{} with ws" },

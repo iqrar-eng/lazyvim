@@ -1,5 +1,5 @@
----@class lazyvim.util.cmp
 local M = {}
+---@class lazyvim.util.cmp
 
 ---@alias lazyvim.util.cmp.Action fun():boolean?
 ---@type table<string, lazyvim.util.cmp.Action>

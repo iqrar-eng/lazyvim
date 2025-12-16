@@ -17,7 +17,7 @@ return {
         ["*"] = {
           keys = {
             {
-              "<leader>cr",
+              "<leader>ht",
               function()
                 local inc_rename = require("inc_rename")
                 return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand("<cword>")
